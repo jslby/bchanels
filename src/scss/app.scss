@@ -51,6 +51,19 @@ body {
       font-size: 52px;
       margin-bottom: 40px;
       text-align: center;
+      padding-bottom: 5px;
+      position: relative;
+      text-transform: uppercase;
+      &:after{
+        height: 5px;
+        background: #424242;
+        width: 90px;
+        position: absolute;
+        content: '';
+        left: 50%;
+        margin-left: -45px;
+        bottom: 0;
+      }
     }
     .item{
       position: relative;
