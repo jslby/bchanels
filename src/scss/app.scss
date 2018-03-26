@@ -43,7 +43,7 @@ $grayColor: #424242;
 body {
   font-family: 'Roboto', sans-serif;;
   font-weight: 300;
-  #block4{
+  section.block4{
     background: #e3e2e0;
     padding: 50px 0;
     .title{
@@ -88,7 +88,7 @@ body {
       }
     }
   }
-  #block3{
+  section.block3{
     position: relative;
     background: #c9bccc;
     &:after{
@@ -151,7 +151,7 @@ body {
       }
     }
   }
-  #block2{
+  section.block2{
     .col-lg-4{
       @include media-breakpoint-down(xs) {
         margin-bottom: 50px;
@@ -173,7 +173,7 @@ body {
       text-transform: uppercase;
     }
   }
-  #block1{
+  section.block1{
     background: #eeeeee;
     .btn{
       @include purpleBtn;
@@ -209,7 +209,7 @@ body {
       align-self: flex-end;
     }
   }
-  #footer{
+  section.footer{
     padding-top: 110px;
     padding-bottom: 110px;
     background: $purpleColor;
@@ -375,7 +375,7 @@ body {
       }
     }
   }
-  #header{
+  section.header{
     padding-top: 50px;
     padding-bottom: 50px;
     background: $purpleColor;
@@ -436,6 +436,10 @@ body {
         margin-top: 0;
       }
       .navbar-nav{
+        .dropdown-menu{
+          border-radius: 0;
+          left: 11px;
+        }
         .nav-item{
           margin-left: 40px;
           @include media-breakpoint-down(md) {
@@ -443,6 +447,11 @@ body {
           }
           .nav-link{
             font-size: 16px;
+            &.dropdown-toggle{
+              &:after{
+                border: none;
+              }
+            }
 
             color: #fff;
             text-transform: uppercase;
