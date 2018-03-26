@@ -12,7 +12,7 @@
 @include media-breakpoint-up(lg) {}
 @include media-breakpoint-up(xl) {}
 
-$purpleColor: #5a3463;
+$purpleColor: rgba(101, 49, 101, 1);
 $darkColor: #030303;
 $grayColor: #424242;
 
@@ -90,6 +90,12 @@ body {
         display: none;
       }
     }
+    .text{
+      padding-top: 125px;
+      padding-bottom: 100px;
+      padding-left: 125px;
+      padding-right: 100px;
+    }
     padding: 50px 0;
     .col-md-6{
       z-index: 2;
@@ -98,6 +104,7 @@ body {
       font-size: 27px;
       color: $darkColor;
       margin-bottom: 80px;
+      text-transform: uppercase;
     }
     p{
       color: $darkColor;
@@ -116,7 +123,15 @@ body {
     }
     .btn{
       @include purpleBtn;
-
+      text-transform: uppercase;
+      padding-left: 60px;
+      background: $purpleColor url(img/icon-play.png) no-repeat 7px center;
+      transition: all 0.15s;
+      &:hover{
+        background: $purpleColor url(img/icon-play.png) no-repeat 7px center;
+        transform: scale(1.1);
+        color: #fff;
+      }
     }
   }
   #block2{
@@ -142,8 +157,10 @@ body {
     }
   }
   #block1{
+    background: #eeeeee;
     .btn{
       @include purpleBtn;
+      margin-top: 50px;
     }
     padding-top: 50px;
     @include media-breakpoint-down(sm) {
@@ -151,7 +168,9 @@ body {
     }
     .title{
       font-size: 90px;
+      text-transform: uppercase;
       font-weight: 100;
+      line-height: 110px;
       color: $purpleColor;
       text-transform: uppercase;
       @include media-breakpoint-down(lg) {
@@ -295,7 +314,6 @@ body {
       display: inline-block;
       max-width: 100%;
       width: 175px;
-      width: auto;
     }
     ul.list-inline{
       display: inline-block;
@@ -304,6 +322,18 @@ body {
       padding-bottom: 0;
       margin-bottom: 0;
       li{
+        background-position: left center;
+        background-repeat: no-repeat;
+        padding-left: 40px;
+        &:nth-child(1){
+          margin-right: 40px;
+          background-image: url(img/icon-phone.png);
+        }
+        &:nth-child(2){
+          padding-left: 35px;
+          background-image: url(img/icon-geo.png);
+        }
+        &
         a{
           line-height: 45px;
           color: #fff;
@@ -334,8 +364,10 @@ body {
       }
       .navbar-nav{
         .nav-item{
+          margin-left: 40px;
           .nav-link{
             font-size: 16px;
+
             color: #fff;
             text-transform: uppercase;
             margin-right: 15px;
@@ -346,8 +378,20 @@ body {
               top: 0px;
               color: #fff;
             }
+            &:after {
+              content: '';
+              display: block;
+              width: 0;
+              height: 1px;
+              background: #fff;
+              transition: width .3s;
+            }
+            &:hover:after{
+              width: 100%;
+            }
           }
           &:first-child{
+            margin-left: 0;
             .nav-link{
               padding-left: 0;
             }
