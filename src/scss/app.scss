@@ -68,22 +68,23 @@ body {
     .item{
       position: relative;
       color: $grayColor;
-      font-size: 27px;
-      padding: 15px;
+      font-size: 23px;
+      padding: 30px 45px;
       transition: all 0.15s;
       cursor: pointer;
+      text-transform: uppercase;
       &:hover{
         background: #fff;
       }
       &:before{
         content: '';
-        width: 5px;
-        height: 10px;
+        width: 10px;
+        height: 25px;
         background: $purpleColor;
         display: block;
         position: absolute;
-        left: 5px;
-        top: 25px;
+        left: 30px;
+        top: 36px;
       }
     }
   }
@@ -203,8 +204,8 @@ body {
     }
   }
   #footer{
-    padding-top: 50px;
-    padding-bottom: 50px;
+    padding-top: 110px;
+    padding-bottom: 110px;
     background: $purpleColor;
     @include media-breakpoint-down(md) {
       padding-top: 10px;
@@ -226,6 +227,41 @@ body {
         font-size: 13px;
         margin-bottom: 5px;
 
+      }
+    }
+    .social{
+      margin-top: 10px;
+      li{
+        margin-right: 2px;
+        a{
+          width: 30px;
+          height: 30px;
+          display: block;
+          text-decoration: none;
+          background-repeat: no-repeat;
+          background-position: center center;
+          background-size: cover;
+        }
+        &:nth-child(1){
+          a{
+            background-image: url(img/icon-linkedin.png);
+          }
+        }
+        &:nth-child(2){
+          a{
+            background-image: url(img/icon-twitter.png);
+          }
+        }
+        &:nth-child(3){
+          a{
+            background-image: url(img/icon-facebook.png);
+          }
+        }
+        &:nth-child(4){
+          a{
+            background-image: url(img/icon-youtube.png);
+          }
+        }
       }
     }
     p{
@@ -269,12 +305,21 @@ body {
       }
     }
     form{
-      &.form-inline{
+      &.form-subscribe{
         @include media-breakpoint-down(sm) {
           display: block;
         }
+        .form-group{
+          display: inline-block;
+          margin-bottom: 0;
+          input{
+          }
+        }
+        button{
+          margin-left: 5px;
+        }
       }
-      margin-top: 58px;
+      margin-top: 20px;
       &.message{
         margin-top: 0;
         @include media-breakpoint-down(md) {
@@ -298,6 +343,9 @@ body {
         border: none;
         background: transparent;
         color: #fff;
+        background: url(img/icon-telegram.png) no-repeat center center;
+        width: 36px;
+        height: 36px;
       }
       button.btn-secondary{
         background: #fff;
