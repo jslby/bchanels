@@ -1,9 +1,10 @@
 const path = require('path');
+const fs = require('fs');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const fs = require('fs');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const GoogleFontsPlugin = require("google-fonts-webpack-plugin")
 
 function generateHtmlPlugins(templateDir) {
   const templateFiles = fs.readdirSync(path.resolve(__dirname, templateDir));
@@ -71,6 +72,11 @@ module.exports = {
     ]
   },
   plugins: [
+    new GoogleFontsPlugin({
+        fonts: [
+            { family: "Roboto", variants: ['100', '300', '400'] }
+        ]
+    }),
     new CopyWebpackPlugin([
       {
         from: './src/fonts',

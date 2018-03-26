@@ -1,22 +1,197 @@
-$font-stack: -apple-system, BlinkMacSystemFont,Roboto,'Open Sans','Helvetica Neue',sans-serif;
-
+$font-stack: 'Roboto', sans-serif;
 @import "~bootstrap/scss/bootstrap";
 
-@font-face {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 400;
-  src: url(../fonts/Roboto-Regular.ttf);
+// @media (min-width: 576px) { ... }
+// @media (min-width: 768px) { ... }
+// @media (min-width: 992px) { ... }
+// @media (min-width: 1200px) { ... }
+
+@include media-breakpoint-up(xs) {}
+@include media-breakpoint-up(sm) {}
+@include media-breakpoint-up(md) {}
+@include media-breakpoint-up(lg) {}
+@include media-breakpoint-up(xl) {}
+
+$purpleColor: #5a3463;
+
+*{
+  outline: none !important;
+  box-shadow: none !important;
 }
 
 body {
   font-family: $font-stack;
-  #logo {
-    width: 10rem;
+  font-weight: 300;
+  #footer{
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background: $purpleColor;
+    @include media-breakpoint-down(md) {
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
+    .header{
+      text-transform: uppercase;
+      font-size: 22px;
+      color: #fff;
+      margin-bottom: 20px;
+    }
+    .list-unstyled{
+      margin-bottom: 0;
+      li{
+        color: #fff;
+        font-size: 13px;
+        margin-bottom: 5px;
+
+      }
+    }
+    p{
+      color: #fff;
+      font-size: 13px;
+      margin-bottom: 15px;
+      padding-bottom: 0;
+      &:last-child{
+        margin-bottom: 0;
+      }
+    }
+    .list-dotted{
+      padding-left: 0;
+      margin-left: 0;
+      list-style: none;
+      li{
+        line-height: 22px;
+        a{
+          color: #fff;
+          font-size: 13px;
+          text-decoration: none;
+          &:before{
+            content: '•';
+            margin-right: 8px;
+            font-size: 12px;
+            position: relative;
+            top: -1px;
+            color: #fff;
+          }
+        }
+      }
+    }
+    .logos{
+      p{
+        margin-top: 20px;
+        margin-bottom: 20px;
+        font-size: 11px;
+      }
+    }
+    form{
+      margin-top: 58px;
+      &.message{
+        margin-top: 0;
+      }
+      &.message{
+        .form-group{
+          margin-right: 5px;
+        }
+      }
+      .form-group{
+        margin-bottom: 5px;
+      }
+      input,
+      textarea{
+        border: none;
+        font-size: 14px;
+      }
+      button.btn-icon{
+        border: none;
+        background: transparent;
+        color: #fff;
+      }
+      button.btn-secondary{
+        background: #fff;
+        font-size: 14px;
+        color: $purpleColor;
+        text-transform: uppercase;
+        float: right;
+        margin-right: 5px;
+        border: 1px solid transparent;
+        &:hover{
+          border: 1px solid #fff;
+          color: #fff;
+          background: transparent;
+        }
+      }
+    }
   }
-  .container {
-    img {
-      width: 20rem;
+  #header{
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background: $purpleColor;
+    @include media-breakpoint-down(md) {
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
+    .logo{
+      display: inline-block;
+      max-width: 100%;
+      width: 175px;
+      width: auto;
+    }
+    ul.list-inline{
+      display: inline-block;
+      float: right;
+      height: 45px;
+      padding-bottom: 0;
+      margin-bottom: 0;
+      li{
+        a{
+          line-height: 45px;
+          color: #fff;
+          text-decoration: none;
+          font-size: 16px;
+          &.btn{
+            padding: 0 10px;
+            border-radius: 0;
+            border: 1px solid #fff;
+            transition: all .3s;
+            &:hover{
+              border-color: $purpleColor;
+              background: #fff;
+              color: $purpleColor;
+            }
+          }
+        }
+      }
+    }
+    .navbar{
+      padding: 0;
+      margin-top: 50px;
+      .navbar-toggler{
+        margin-left: auto;
+      }
+      @include media-breakpoint-down(md) {
+        margin-top: 0;
+      }
+      .navbar-nav{
+        .nav-item{
+          .nav-link{
+            font-size: 16px;
+            color: #fff;
+            text-transform: uppercase;
+            margin-right: 15px;
+            &:before{
+              content: '• ';
+              font-size: 14px;
+              position: relative;
+              top: 0px;
+              color: #fff;
+            }
+          }
+          &:first-child{
+            .nav-link{
+              padding-left: 0;
+            }
+          }
+        }
+      }
     }
   }
 }
