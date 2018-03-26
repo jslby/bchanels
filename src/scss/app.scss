@@ -14,6 +14,24 @@ $font-stack: 'Roboto', sans-serif;
 
 $purpleColor: #5a3463;
 
+@mixin purpleBtn{
+  min-width: 150px;
+  height: 50px;
+  padding: 0 20px;
+  border-radius: 25px;
+  color: #fff;
+  text-align: center;
+  background: $purpleColor;
+  line-height: 50px;
+  border: 1px solid transparent;
+  &:hover{
+    border-color: $purpleColor;
+    background: transparent;
+    color: $purpleColor;
+    text-decoration: none;
+  }
+}
+
 *{
   outline: none !important;
   box-shadow: none !important;
@@ -22,6 +40,35 @@ $purpleColor: #5a3463;
 body {
   font-family: $font-stack;
   font-weight: 300;
+  #block1{
+    .btn{
+      @include purpleBtn;
+    }
+    padding-top: 50px;
+    @include media-breakpoint-down(sm) {
+      padding-bottom: 50px;
+    }
+    .title{
+      font-size: 90px;
+      font-weight: 100;
+      color: $purpleColor;
+      text-transform: uppercase;
+      @include media-breakpoint-down(lg) {
+        font-size: 40px;
+      }
+
+    }
+    .col-lg-8{
+      @include media-breakpoint-down(sm) {
+        text-align: center;
+        justify-content: center;
+      }
+    }
+    img{
+      width: 100%;
+      align-self: flex-end;
+    }
+  }
   #footer{
     padding-top: 50px;
     padding-bottom: 50px;
@@ -35,6 +82,9 @@ body {
       font-size: 22px;
       color: #fff;
       margin-bottom: 20px;
+      @include media-breakpoint-down(sm) {
+        margin-top: 50px;
+      }
     }
     .list-unstyled{
       margin-bottom: 0;
@@ -76,6 +126,9 @@ body {
       }
     }
     .logos{
+      @include media-breakpoint-down(md) {
+        margin-top: 50px;
+      }
       p{
         margin-top: 20px;
         margin-bottom: 20px;
@@ -83,9 +136,17 @@ body {
       }
     }
     form{
+      &.form-inline{
+        @include media-breakpoint-down(sm) {
+          display: block;
+        }
+      }
       margin-top: 58px;
       &.message{
         margin-top: 0;
+        @include media-breakpoint-down(md) {
+          margin-top: 50px;
+        }
       }
       &.message{
         .form-group{
