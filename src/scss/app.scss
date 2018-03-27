@@ -77,6 +77,34 @@ body {
   font-weight: 300;
   section.block6{
     .slick{
+      .item{
+        position: relative;
+      }
+      .inner{
+        position: absolute;
+        width: 200px;
+        padding: 30px;
+        left: 80px;
+        top: 0;
+        @include media-breakpoint-down(sm) {
+          display: none;
+        }
+        background: rgba(255,255,255,0.7);
+        z-index: 3;
+        text-align: center;
+        color: $darkColor;
+        .border{
+          border: none !important;
+          padding-bottom: 5px;
+          border-bottom: 1px solid $darkColor!important;
+        }
+        .bottom{
+          margin-top: 65px;
+          padding-bottom: 30px;
+          text-transform: uppercase;
+
+        }
+      }
       .slick-arrow{
         position: absolute;
         top: 50%;
