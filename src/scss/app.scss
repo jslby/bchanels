@@ -1,10 +1,41 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:100,300,400&subset=cyrillic');
 @import "~bootstrap/scss/bootstrap";
 
-// @media (min-width: 576px) { ... }
-// @media (min-width: 768px) { ... }
-// @media (min-width: 992px) { ... }
-// @media (min-width: 1200px) { ... }
+.col-xs-1-5,
+.col-sm-1-5,
+.col-md-1-5,
+.col-lg-1-5 {
+  position: relative;
+  min-height: 1px;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+.col-xs-1-5 {
+  width: 20%;
+  float: left;
+}
+
+@media (min-width: 768px) {
+  .col-sm-1-5 {
+    width: 20%;
+    float: left;
+  }
+}
+
+@media (min-width: 992px) {
+  .col-md-1-5 {
+    width: 20%;
+    float: left;
+  }
+}
+
+@media (min-width: 1200px) {
+  .col-lg-1-5 {
+    width: 20%;
+    float: left;
+  }
+}
 
 @include media-breakpoint-up(xs) {}
 @include media-breakpoint-up(sm) {}
@@ -43,6 +74,35 @@ $grayColor: #424242;
 body {
   font-family: 'Roboto', sans-serif;;
   font-weight: 300;
+  section.block5{
+    background: url(uploads/block5.jpg) no-repeat center center / cover;
+    padding-top: 350px;
+    border-top: 1px solid #fff;
+    text-align: center;
+    padding-bottom: 140px;
+    @include media-breakpoint-down(sm) {
+      padding-top: 50px;
+      padding-bottom: 50px;
+    }
+    .title{
+      font-size: 48px;
+      color: #fff;
+      margin-bottom: 30px;
+      @include media-breakpoint-down(sm) {
+        font-size: 28px;
+      }
+    }
+    p{
+      padding-bottom: 0;
+      margin-bottom: 0;
+      font-size: 16px;
+      color: #fff;
+      padding: 0 200px;
+      @include media-breakpoint-down(sm) {
+        padding: 0 10px;
+      }
+    }
+  }
   section.block4{
     background: #e3e2e0;
     padding: 50px 0;
@@ -428,7 +488,7 @@ body {
     }
     .navbar{
       padding: 0;
-      margin-top: 50px;
+      margin-top: 20px;
       .navbar-toggler{
         margin-left: auto;
       }
@@ -439,6 +499,30 @@ body {
         .dropdown-menu{
           border-radius: 0;
           left: 11px;
+          border-color: #fff;
+          background: $purpleColor;
+
+          a{
+            color: #fff;
+            transition: all .15s;
+            &:before{
+              content: '• ';
+              transition: all .15s;
+              font-size: 14px;
+              position: relative;
+              top: 0px;
+              color: #fff;
+              @include media-breakpoint-down(md) {
+                display: none;
+              }
+            }
+            &:hover{
+              color: $darkColor;
+              &:before{
+                color: $darkColor;
+              }
+            }
+          }
         }
         .nav-item{
           margin-left: 40px;
