@@ -1,8 +1,8 @@
 import jQuery from 'jquery';
 import popper from 'popper.js';
 import bootstrap from 'bootstrap';
-require('slick-carousel');
+import slick from 'slick-carousel';
 
-jQuery(function() {
-  $('.slick1').slick();
+jQuery(function($) {
+  $('.slick').slick();
 });

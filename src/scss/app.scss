@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:100,300,400&subset=cyrillic');
 @import "~bootstrap/scss/bootstrap";
+@import "~slick-carousel/slick/slick.css";
 
 .col-xs-1-5,
 .col-sm-1-5,
@@ -74,6 +75,35 @@ $grayColor: #424242;
 body {
   font-family: 'Roboto', sans-serif;;
   font-weight: 300;
+  section.block6{
+    .slick{
+      .slick-arrow{
+        position: absolute;
+        top: 50%;
+        margin-top: -22px;
+        width: 20px;
+        height: 43px;
+        display: block;
+        border: none;
+        opacity: 0.7;
+        background: url(img/block6-arrow.png) no-repeat left top;
+        text-indent: -999999px;
+        transition: all .15s;
+        z-index: 5;
+        cursor: pointer;
+        &:hover{
+          transform: scale(1.1);
+        }
+        &.slick-prev{
+          left: 20px;
+        }
+        &.slick-next{
+          right: 20px;
+          background-position: right top
+        }
+      }
+    }
+  }
   section.block5{
     background: url(uploads/block5.jpg) no-repeat center center / cover;
     padding-top: 350px;
