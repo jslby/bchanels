@@ -67,6 +67,21 @@ $grayColor: #424242;
   }
 }
 
+@mixin purpleBtnIn{
+  @include purpleBtn;
+  color: $purpleColor;
+  text-align: center;
+  background: transparent;
+  line-height: 50px;
+  border: 1px solid $purpleColor;
+  &:hover{
+    border-color: $purpleColor;
+    background: $purpleColor;
+    color: #fff;
+    text-decoration: none;
+  }
+}
+
 *{
   outline: none !important;
   box-shadow: none !important;
@@ -75,6 +90,97 @@ $grayColor: #424242;
 body {
   font-family: 'Roboto', sans-serif;;
   font-weight: 300;
+  section.block10{
+    background: url(img/block10-bg.jpg) no-repeat center center / cover;
+    padding-top: 80px;
+    padding-bottom: 60px;
+    .title{
+      font-size: 36px;
+      color: #fff;
+      text-align: center;
+    }
+    .subtitle{
+      font-size: 18px;
+      padding: 0 100px;
+      margin-bottom: 40px;
+      margin-top: 30px;
+      @include media-breakpoint-down(sm) {
+        padding: 0 10px;
+      }
+      color: #fff;
+      text-align: center;
+    }
+    .inner{
+      background: rgba(255,255,255,0.4);
+      padding: 50px 40px;
+      text-align: center;
+      height: 100%;
+      img{
+        margin-bottom: 50px;
+      }
+      .name{
+        font-size: 28px;
+        color: #fff;
+        margin-bottom: 35px;
+      }
+      .text{
+        font-size: 14px;
+        color: #fff;
+      }
+      .btn{
+        @include purpleBtn;
+        max-width: 100%;
+        @include media-breakpoint-down(md) {
+          font-size: 12px;
+        }
+      }
+      ul{
+        margin-top: 40px;
+        padding: 0;
+        li{
+          list-style: none;
+          padding: 0;
+          margin-bottom: 30px;
+          color: #fff;
+          display: block;
+          text-align: center;
+        }
+      }
+    }
+  }
+  section.block9{
+    text-align: center;
+    padding-bottom: 170px;
+    padding-top: 80px;
+    @include media-breakpoint-down(sm) {
+      .col-md-4{
+        margin-bottom: 50px;
+      }
+    }
+    .title{
+      font-size: 36px;
+      color: $darkColor;
+      margin-bottom: 100px;
+    }
+    img{
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      margin-bottom: 40px;
+    }
+    .btn{
+      @include purpleBtnIn;
+      margin-top: 40px;
+    }
+    .name{
+      font-size: 18px;
+      color: $darkColor;
+    }
+    .sub{
+      font-size: 14px;
+      color: $darkColor;
+    }
+  }
   section.block6{
     .slick{
       .item{
@@ -82,7 +188,7 @@ body {
       }
       .inner{
         position: absolute;
-        width: 200px;
+        width: 250px;
         padding: 30px;
         left: 80px;
         top: 0;
